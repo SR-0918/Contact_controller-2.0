@@ -1,0 +1,20 @@
+<h5>ユーザーからのお問い合わせ内容</h5>
+<p>-----------------------------------</p>
+
+<p>お名前: <%= @contact.name %></p>
+<p>不具合の内容: <%= @contact.message %></p>
+<p>対象URLのページ: <%= @contact.contentnumber %></p>
+<p>不具合を確認したゲームタイトル: <%= @contact.title %></p>
+<p>不具合を確認したサービス名: <%= @contact.service %></p>
+<p>不具合を確認したときの操作手順: <%= @contact.operation %></p>
+<p>返信用Email: <%= @contact.email %></p>
+<p>添付画像</p>
+<p> 
+  <% if @contact.contactimage? %>
+    <% @contact.contactimage.each do |images| %>
+      <%= image_tag images.url %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>-----------------------------------</p>
